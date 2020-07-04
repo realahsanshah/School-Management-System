@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace School_Management_System
 {
-    public partial class Login : Base
+    public partial class StudentWindow : Base2
     {
-        
-        public Login()
+        public StudentWindow()
         {
             InitializeComponent();
-        }
-
-        private void loginBtn_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-
-            Helper.SwitchWindows(home, this, MDI.ActiveForm);
         }
     }
 }

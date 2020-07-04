@@ -31,10 +31,10 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.welcomeLabel = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -70,6 +70,17 @@
             this.panel3.Size = new System.Drawing.Size(280, 60);
             this.panel3.TabIndex = 0;
             // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.welcomeLabel.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.welcomeLabel.Location = new System.Drawing.Point(187, 0);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(93, 60);
+            this.welcomeLabel.TabIndex = 6;
+            this.welcomeLabel.Text = "Welcome, ";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // rightPanel
             // 
             this.rightPanel.Controls.Add(this.panel5);
@@ -97,21 +108,11 @@
             this.panel4.Size = new System.Drawing.Size(764, 60);
             this.panel4.TabIndex = 1;
             // 
-            // welcomeLabel
-            // 
-            this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.welcomeLabel.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.welcomeLabel.Location = new System.Drawing.Point(187, 0);
-            this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(93, 60);
-            this.welcomeLabel.TabIndex = 6;
-            this.welcomeLabel.Text = "Welcome, ";
-            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Base
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 496);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);

@@ -9,14 +9,15 @@ namespace School_Management_System
 {
     class Helper
     {
-        public string path= Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static string path= Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-        public void SwitchWindows(Form openingWindow,Form closingWindow,Form MDI)
+        public static void SwitchWindows(Form openingWindow,Form closingWindow,Form MDI)
         {
             closingWindow.Close();
 
             openingWindow.WindowState = FormWindowState.Maximized;
             openingWindow.MdiParent = MDI;
+            openingWindow.Show();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace School_Management_System
         private void saveBtn_Click(object sender, EventArgs e)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            Helper data = new Helper(); 
+            
             if ((dataSourceText.Text == "" || databaseText.Text == "") || ((intergratedCheckBox.Checked == false) && (usernameText.Text == "" || passwordText.Text == "")))
             {
                 MessageBox.Show("*Required fields cannot be empty");
@@ -47,14 +47,14 @@ namespace School_Management_System
             {
                 stringBuilder.Append("Integrated Security=true;");
             }
-            File.WriteAllText(data.path + "\\connect",stringBuilder.ToString());
+            File.WriteAllText(Helper.path + "\\connect",stringBuilder.ToString());;
 
             DialogResult result=MessageBox.Show("Setting Saved Successfully","Success",MessageBoxButtons.OK);
 
             if (result == DialogResult.OK)
             {
                 Login login = new Login();
-                data.SwitchWindows(login, this, MDI.ActiveForm);
+                Helper.SwitchWindows(login, this, MDI.ActiveForm);
 
             }
 

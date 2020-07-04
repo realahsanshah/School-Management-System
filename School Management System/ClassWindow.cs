@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace School_Management_System
 {
-    public partial class Login : Base
+    public partial class ClassWindow : Base2
     {
-        
-        public Login()
+        public ClassWindow()
         {
             InitializeComponent();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void usernameText_ControlRemoved(object sender, ControlEventArgs e)
         {
-            Home home = new Home();
-
-            Helper.SwitchWindows(home, this, MDI.ActiveForm);
+            MessageBox.Show("hello");
         }
     }
 }
