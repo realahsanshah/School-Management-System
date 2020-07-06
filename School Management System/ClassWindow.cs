@@ -21,5 +21,10 @@ namespace School_Management_System
         {
             MessageBox.Show("hello");
         }
+
+        private void classesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

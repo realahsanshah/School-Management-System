@@ -42,6 +42,8 @@
             this.classesBtn = new System.Windows.Forms.Button();
             this.staffBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.classTimingBtn = new System.Windows.Forms.Button();
+            this.shiftBtn = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -90,6 +92,8 @@
             this.tableLayoutPanel1.Controls.Add(this.sectionBtn, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.classesBtn, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.staffBtn, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.classTimingBtn, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.shiftBtn, 3, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -260,6 +264,30 @@
             this.panel1.Size = new System.Drawing.Size(758, 19);
             this.panel1.TabIndex = 1;
             // 
+            // classTimingBtn
+            // 
+            this.classTimingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classTimingBtn.FlatAppearance.BorderSize = 2;
+            this.classTimingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.classTimingBtn.Location = new System.Drawing.Point(305, 143);
+            this.classTimingBtn.Name = "classTimingBtn";
+            this.classTimingBtn.Size = new System.Drawing.Size(145, 64);
+            this.classTimingBtn.TabIndex = 14;
+            this.classTimingBtn.Text = "Class Timing";
+            this.classTimingBtn.UseVisualStyleBackColor = true;
+            // 
+            // shiftBtn
+            // 
+            this.shiftBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shiftBtn.FlatAppearance.BorderSize = 2;
+            this.shiftBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shiftBtn.Location = new System.Drawing.Point(456, 143);
+            this.shiftBtn.Name = "shiftBtn";
+            this.shiftBtn.Size = new System.Drawing.Size(145, 64);
+            this.shiftBtn.TabIndex = 15;
+            this.shiftBtn.Text = "Shiftes";
+            this.shiftBtn.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -293,5 +321,7 @@
         private System.Windows.Forms.Button classesBtn;
         private System.Windows.Forms.Button staffBtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button classTimingBtn;
+        private System.Windows.Forms.Button shiftBtn;
     }
 }
