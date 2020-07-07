@@ -21,7 +21,7 @@ namespace School_Management_System
 
         public override void addBtn_Click(object sender, EventArgs e)
         {
-            Helper.enableReset(panel6);
+            Helper.EnableReset(panel6);
             imageAddress.Enabled = false;
             edit = false;
         }
@@ -29,7 +29,7 @@ namespace School_Management_System
 
         public override void editBtn_Click(object sender, EventArgs e)
         {
-            Helper.enable(panel6);
+            Helper.Enable(panel6);
             edit = true;
             imageAddress.Enabled = false; 
         }
@@ -96,7 +96,7 @@ namespace School_Management_System
 
         private void StaffWindow_Load(object sender, EventArgs e)
         {
-            Helper.disableReset(panel6);
+            Helper.DisableReset(panel6);
 
         }
     }

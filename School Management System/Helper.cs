@@ -32,7 +32,7 @@ namespace School_Management_System
             }
         }
 
-        public static void disableReset(Panel p)
+        public static void DisableReset(Panel p)
         {
             foreach (Control control in p.Controls)
             {
@@ -69,7 +69,7 @@ namespace School_Management_System
                 }
             }
         }
-        public static void disableReset(GroupBox p)
+        public static void DisableReset(GroupBox p)
         {
             foreach (Control control in p.Controls)
             {
@@ -108,7 +108,7 @@ namespace School_Management_System
             }
         }
 
-        public static void disable(Panel p)
+        public static void Disable(Panel p)
         {
             foreach (Control control in p.Controls)
             {
@@ -143,7 +143,7 @@ namespace School_Management_System
             }
         }
 
-        public static void disable(GroupBox p)
+        public static void Disable(GroupBox p)
         {
             foreach (Control control in p.Controls)
             {
@@ -179,7 +179,7 @@ namespace School_Management_System
         }
 
 
-        public static void enableReset(Panel p)
+        public static void EnableReset(Panel p)
         {
             foreach (Control control in p.Controls)
             {
@@ -219,7 +219,7 @@ namespace School_Management_System
             }
         }
 
-        public static void enableReset(GroupBox p)
+        public static void EnableReset(GroupBox p)
         {
             foreach (Control control in p.Controls)
             {
@@ -258,7 +258,7 @@ namespace School_Management_System
             }
         }
 
-        public static void enable(Panel p)
+        public static void Enable(Panel p)
         {
             foreach (Control control in p.Controls)
             {
@@ -294,7 +294,7 @@ namespace School_Management_System
             }
         }
 
-        public static void enable(GroupBox p)
+        public static void Enable(GroupBox p)
         {
             foreach (Control control in p.Controls)
             {
@@ -328,6 +328,17 @@ namespace School_Management_System
                     component.Enabled = true;
                 }
             }
+        }
+
+        public static void CreateSerialNumbers(DataGridView gridView, string columnName)
+        {
+            int count = 1;
+            foreach(DataGridViewRow row in gridView.Rows)
+            {
+                row.Cells[columnName].Value = count;
+                count++;
+            }
+
         }
     }
 

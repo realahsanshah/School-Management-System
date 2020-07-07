@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.roleText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.statuses = new System.Windows.Forms.ComboBox();
+            this.statusCB = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rolesIDGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.statuses);
+            this.panel6.Controls.Add(this.statusCB);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.roleText);
             this.panel6.Controls.Add(this.label1);
@@ -71,7 +72,7 @@
             this.panel6.Controls.SetChildIndex(this.label1, 0);
             this.panel6.Controls.SetChildIndex(this.roleText, 0);
             this.panel6.Controls.SetChildIndex(this.label2, 0);
-            this.panel6.Controls.SetChildIndex(this.statuses, 0);
+            this.panel6.Controls.SetChildIndex(this.statusCB, 0);
             // 
             // panel5
             // 
@@ -109,18 +110,18 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Status";
             // 
-            // statuses
+            // statusCB
             // 
-            this.statuses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statuses.FormattingEnabled = true;
-            this.statuses.Items.AddRange(new object[] {
+            this.statusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusCB.FormattingEnabled = true;
+            this.statusCB.Items.AddRange(new object[] {
             "Active",
-            "Inactive"});
-            this.statuses.Location = new System.Drawing.Point(16, 116);
-            this.statuses.Name = "statuses";
-            this.statuses.Size = new System.Drawing.Size(258, 23);
-            this.statuses.TabIndex = 4;
-            this.statuses.SelectedIndexChanged += new System.EventHandler(this.statuses_SelectedIndexChanged);
+            "In-active"});
+            this.statusCB.Location = new System.Drawing.Point(16, 116);
+            this.statusCB.Name = "statusCB";
+            this.statusCB.Size = new System.Drawing.Size(258, 23);
+            this.statusCB.TabIndex = 4;
+            this.statusCB.SelectedIndexChanged += new System.EventHandler(this.statuses_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -129,27 +130,37 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rolesIDGv,
             this.snoGV,
             this.RoleGV,
             this.StatusGV});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(740, 359);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rolesIDGv
             // 
@@ -208,6 +219,7 @@
             this.statusErrorLabel.Size = new System.Drawing.Size(20, 25);
             this.statusErrorLabel.TabIndex = 6;
             this.statusErrorLabel.Text = "*";
+            this.statusErrorLabel.Visible = false;
             // 
             // RolesWindow
             // 
@@ -216,6 +228,7 @@
             this.ClientSize = new System.Drawing.Size(1026, 489);
             this.Name = "RolesWindow";
             this.Text = "RolesWindow";
+            this.Load += new System.EventHandler(this.RolesWindow_Load);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -230,7 +243,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox statuses;
+        private System.Windows.Forms.ComboBox statusCB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox roleText;
         private System.Windows.Forms.DataGridView dataGridView1;
