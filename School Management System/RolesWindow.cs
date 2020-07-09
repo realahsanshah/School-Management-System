@@ -110,9 +110,20 @@ namespace School_Management_System
 
         public override void searchText_TextChanged(object sender, EventArgs e)
         {
-
+            SearchData();   
         }
 
+
+        private void SearchData()
+        {
+            var data = db.role_search(searchText.Text);
+            rolesIDGv.DataPropertyName = "ID";
+            RoleGV.DataPropertyName = "Role";
+            StatusGV.DataPropertyName = "Status";
+            dataGridView1.DataSource = data;
+            Helper.CreateSerialNumbers(dataGridView1, "snoGV");
+
+        }
 
         private void roleText_TextChanged(object sender, EventArgs e)
         {

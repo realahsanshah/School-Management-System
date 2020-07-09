@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLbl = new System.Windows.Forms.Label();
             this.nameText = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -37,6 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.roleLabel = new System.Windows.Forms.Label();
             this.roleCB = new System.Windows.Forms.ComboBox();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolDataSet = new School_Management_System.schoolDataSet();
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.imageLabel = new System.Windows.Forms.Label();
@@ -51,7 +64,10 @@
             this.usernameError = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.roleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new School_Management_System.schoolDataSetTableAdapters.rolesTableAdapter();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIdGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,15 +75,22 @@
             this.phoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageGV = new System.Windows.Forms.DataGridViewImageColumn();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // searchText
+            // 
+            this.searchText.Size = new System.Drawing.Size(137, 22);
             // 
             // leftPanel
             // 
@@ -163,7 +186,7 @@
             this.emailText.MaxLength = 25;
             this.emailText.Name = "emailText";
             this.emailText.Size = new System.Drawing.Size(238, 21);
-            this.emailText.TabIndex = 9;
+            this.emailText.TabIndex = 5;
             // 
             // phoneText
             // 
@@ -171,7 +194,7 @@
             this.phoneText.MaxLength = 14;
             this.phoneText.Name = "phoneText";
             this.phoneText.Size = new System.Drawing.Size(238, 21);
-            this.phoneText.TabIndex = 11;
+            this.phoneText.TabIndex = 9;
             // 
             // label1
             // 
@@ -194,12 +217,30 @@
             // 
             // roleCB
             // 
+            this.roleCB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rolesBindingSource, "role_id", true));
+            this.roleCB.DataSource = this.rolesBindingSource;
+            this.roleCB.DisplayMember = "role_name";
             this.roleCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roleCB.FormattingEnabled = true;
             this.roleCB.Location = new System.Drawing.Point(16, 289);
             this.roleCB.Name = "roleCB";
             this.roleCB.Size = new System.Drawing.Size(238, 23);
-            this.roleCB.TabIndex = 13;
+            this.roleCB.TabIndex = 10;
+            this.roleCB.ValueMember = "role_id";
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.schoolDataSet;
+            // 
+            // schoolDataSet
+            // 
+            this.schoolDataSet.DataSetName = "schoolDataSet";
+            this.schoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roleBindingSource
+            // 
+            this.roleBindingSource.DataSource = typeof(School_Management_System.Role);
             // 
             // statusCB
             // 
@@ -211,7 +252,7 @@
             this.statusCB.Location = new System.Drawing.Point(16, 335);
             this.statusCB.Name = "statusCB";
             this.statusCB.Size = new System.Drawing.Size(238, 23);
-            this.statusCB.TabIndex = 15;
+            this.statusCB.TabIndex = 11;
             // 
             // label2
             // 
@@ -237,7 +278,7 @@
             this.imageAddress.Location = new System.Drawing.Point(16, 384);
             this.imageAddress.Name = "imageAddress";
             this.imageAddress.Size = new System.Drawing.Size(238, 21);
-            this.imageAddress.TabIndex = 17;
+            this.imageAddress.TabIndex = 14;
             // 
             // browseBtn
             // 
@@ -246,7 +287,7 @@
             this.browseBtn.Location = new System.Drawing.Point(16, 412);
             this.browseBtn.Name = "browseBtn";
             this.browseBtn.Size = new System.Drawing.Size(238, 42);
-            this.browseBtn.TabIndex = 18;
+            this.browseBtn.TabIndex = 13;
             this.browseBtn.Text = "Browse";
             this.browseBtn.UseVisualStyleBackColor = true;
             this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
@@ -257,7 +298,8 @@
             this.passwordText.MaxLength = 15;
             this.passwordText.Name = "passwordText";
             this.passwordText.Size = new System.Drawing.Size(238, 21);
-            this.passwordText.TabIndex = 22;
+            this.passwordText.TabIndex = 4;
+            this.passwordText.UseSystemPasswordChar = true;
             // 
             // passwordLbl
             // 
@@ -275,7 +317,8 @@
             this.usernameText.MaxLength = 25;
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(238, 21);
-            this.usernameText.TabIndex = 20;
+            this.usernameText.TabIndex = 3;
+            this.usernameText.Leave += new System.EventHandler(this.usernameText_Leave);
             // 
             // label4
             // 
@@ -338,77 +381,106 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
+            this.passwordGV,
             this.userIdGV,
             this.nameGV,
             this.usernameGV,
             this.emailGV,
             this.phoneGV,
             this.roleGV,
-            this.statusGV,
-            this.imageGV});
+            this.statusGV});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(743, 549);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // roleBindingSource1
+            // 
+            this.roleBindingSource1.DataSource = typeof(School_Management_System.Role);
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
             // 
             // snoGV
             // 
             this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.snoGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.snoGV.HeaderText = "S#";
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 48;
             // 
+            // passwordGV
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.passwordGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.passwordGV.HeaderText = "Password";
+            this.passwordGV.Name = "passwordGV";
+            this.passwordGV.ReadOnly = true;
+            this.passwordGV.Visible = false;
+            // 
             // userIdGV
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.userIdGV.DefaultCellStyle = dataGridViewCellStyle4;
             this.userIdGV.HeaderText = "User ID";
             this.userIdGV.Name = "userIdGV";
             this.userIdGV.ReadOnly = true;
             // 
             // nameGV
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nameGV.DefaultCellStyle = dataGridViewCellStyle5;
             this.nameGV.HeaderText = "Name";
             this.nameGV.Name = "nameGV";
             this.nameGV.ReadOnly = true;
             // 
             // usernameGV
             // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.usernameGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.usernameGV.HeaderText = "Username";
             this.usernameGV.Name = "usernameGV";
             this.usernameGV.ReadOnly = true;
             // 
             // emailGV
             // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.emailGV.DefaultCellStyle = dataGridViewCellStyle7;
             this.emailGV.HeaderText = "Email";
             this.emailGV.Name = "emailGV";
             this.emailGV.ReadOnly = true;
             // 
             // phoneGV
             // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.phoneGV.DefaultCellStyle = dataGridViewCellStyle8;
             this.phoneGV.HeaderText = "Phone #";
             this.phoneGV.Name = "phoneGV";
             this.phoneGV.ReadOnly = true;
             // 
             // roleGV
             // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.roleGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.roleGV.HeaderText = "Role";
             this.roleGV.Name = "roleGV";
             this.roleGV.ReadOnly = true;
             // 
             // statusGV
             // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statusGV.DefaultCellStyle = dataGridViewCellStyle10;
             this.statusGV.HeaderText = "Status";
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
-            // 
-            // imageGV
-            // 
-            this.imageGV.HeaderText = "Image";
-            this.imageGV.Name = "imageGV";
-            this.imageGV.ReadOnly = true;
             // 
             // StaffWindow
             // 
@@ -423,9 +495,13 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +529,13 @@
         private System.Windows.Forms.Label usernameError;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource roleBindingSource;
+        private System.Windows.Forms.BindingSource roleBindingSource1;
+        private schoolDataSet schoolDataSet;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private schoolDataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn snoGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameGV;
@@ -461,6 +543,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusGV;
-        private System.Windows.Forms.DataGridViewImageColumn imageGV;
     }
 }

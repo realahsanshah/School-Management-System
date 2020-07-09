@@ -67,6 +67,8 @@ namespace School_Management_System
                     component.Enabled = false;
                     component.Value = DateTime.Now;
                 }
+
+                
             }
         }
         public static void DisableReset(GroupBox p)
