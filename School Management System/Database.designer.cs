@@ -36,9 +36,9 @@ namespace School_Management_System
     partial void InsertRole(Role instance);
     partial void UpdateRole(Role instance);
     partial void DeleteRole(Role instance);
-    partial void Insertsection(section instance);
-    partial void Updatesection(section instance);
-    partial void Deletesection(section instance);
+    partial void InsertSection(Section instance);
+    partial void UpdateSection(Section instance);
+    partial void DeleteSection(Section instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -87,11 +87,11 @@ namespace School_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<section> sections
+		public System.Data.Linq.Table<Section> Sections
 		{
 			get
 			{
-				return this.GetTable<section>();
+				return this.GetTable<Section>();
 			}
 		}
 		
@@ -184,6 +184,41 @@ namespace School_Management_System
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data);
 			return ((ISingleResult<staff_searchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.section_search")]
+		public ISingleResult<section_searchResult> section_search([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string data)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data);
+			return ((ISingleResult<section_searchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.section_delete")]
+		public int section_delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> secID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), secID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.section_getSections")]
+		public ISingleResult<section_getSectionsResult> section_getSections()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<section_getSectionsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.section_insert")]
+		public int section_insert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.section_update")]
+		public int section_update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> secID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, status, secID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -528,7 +563,7 @@ namespace School_Management_System
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sections")]
-	public partial class section : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Section : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -551,7 +586,7 @@ namespace School_Management_System
     partial void Onsec_statusChanged();
     #endregion
 		
-		public section()
+		public Section()
 		{
 			OnCreated();
 		}
@@ -1070,6 +1105,130 @@ namespace School_Management_System
 				if ((this._Role != value))
 				{
 					this._Role = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class section_searchResult
+	{
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Status;
+		
+		public section_searchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class section_getSectionsResult
+	{
+		
+		private int _ID;
+		
+		private string _Section;
+		
+		private string _Status;
+		
+		public section_getSectionsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Section", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Section
+		{
+			get
+			{
+				return this._Section;
+			}
+			set
+			{
+				if ((this._Section != value))
+				{
+					this._Section = value;
 				}
 			}
 		}

@@ -19,8 +19,8 @@
       <Column Name="role_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.sections" Member="sections">
-    <Type Name="section">
+  <Table Name="dbo.sections" Member="Sections">
+    <Type Name="Section">
       <Column Name="sec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="sec_name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="sec_status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
@@ -134,5 +134,35 @@
       <Column Name="Role" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.section_search" Method="section_search">
+    <Parameter Name="data" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="section_searchResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.section_delete" Method="section_delete">
+    <Parameter Name="secID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.section_getSections" Method="section_getSections">
+    <ElementType Name="section_getSectionsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Section" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.section_insert" Method="section_insert">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="status" Type="System.Byte" DbType="TinyInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.section_update" Method="section_update">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="status" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="secID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

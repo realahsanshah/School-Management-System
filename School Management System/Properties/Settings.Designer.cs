@@ -33,5 +33,16 @@ namespace School_Management_System.Properties {
                 return ((string)(this["schoolConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AHSAN-SHAH\\SQLEXPRESS;Initial Catalog=schooldb;Integrated Security=Tr" +
+            "ue")]
+        public string schooldbConnectionString {
+            get {
+                return ((string)(this["schooldbConnectionString"]));
+            }
+        }
     }
 }

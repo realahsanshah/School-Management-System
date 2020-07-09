@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sectionLabel = new System.Windows.Forms.Label();
             this.sectionNameText = new System.Windows.Forms.TextBox();
             this.statusCB = new System.Windows.Forms.ComboBox();
@@ -48,6 +49,10 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // searchText
+            // 
+            this.searchText.Size = new System.Drawing.Size(135, 22);
             // 
             // leftPanel
             // 
@@ -106,7 +111,7 @@
             this.statusCB.FormattingEnabled = true;
             this.statusCB.Items.AddRange(new object[] {
             "Active",
-            "Inactive"});
+            "In-active"});
             this.statusCB.Location = new System.Drawing.Point(16, 120);
             this.statusCB.Name = "statusCB";
             this.statusCB.Size = new System.Drawing.Size(245, 23);
@@ -176,13 +181,23 @@
             this.sectionIDGv,
             this.sectionGV,
             this.StatusGV});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(751, 390);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // snoGV
             // 
@@ -218,6 +233,7 @@
             this.ClientSize = new System.Drawing.Size(1037, 503);
             this.Name = "SectionWindow";
             this.Text = "Sections";
+            this.Load += new System.EventHandler(this.SectionWindow_Load);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
